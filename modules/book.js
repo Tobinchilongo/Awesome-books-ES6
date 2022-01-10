@@ -4,7 +4,7 @@ export default class BookClass {
       this.title = title;
       this.author = author;
       this.id = id;
-    }
+    }   
     
     bookCode() {
         return `<li><div class="list-items">
@@ -21,13 +21,14 @@ export default class BookClass {
         }
         book.id = id;
         bookss.push(book);
+        console.log(bookss);
         localStorage.setItem('bookss', JSON.stringify(bookss));
     }
     
-    static remove(id) {
-        bookss = bookss.filter((b) => b.id !== Number(id));
-        localStorage.setItem('bookss', JSON.stringify(bookss));
-    }
+        static remove(id) {
+            bookss = bookss.filter((b) => b.id !== Number(id));
+            localStorage.setItem('bookss', JSON.stringify(bookss));
+        }
     
     
 }
