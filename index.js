@@ -1,6 +1,6 @@
-import BookClass from  './modules/book.js';
+import BookClass from './modules/book.js';
 
-const bookList = document .querySelector('.books');
+const bookList = document.querySelector('.books');
 const form = document.getElementById('newBook');
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
@@ -30,7 +30,6 @@ navItem3.addEventListener('click', () => {
 });
 
 let bookss = [];
-
 
 const storedBooks = JSON.parse(localStorage.getItem('bookss'));
 
