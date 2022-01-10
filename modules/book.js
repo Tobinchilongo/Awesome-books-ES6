@@ -1,5 +1,36 @@
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
+const bookList = document.querySelector('.books');
+const form = document.getElementById('newBook');
+const titleInput = document.getElementById('title');
+const authorInput = document.getElementById('author');
+const list = document.querySelector('.container');
+const addNewBook = document.querySelector('.new-book');
+const contact = document.querySelector('.contact');
+const navItem1 = document.querySelector('.nav-item-1');
+const navItem2 = document.querySelector('.nav-item-2');
+const navItem3 = document.querySelector('.nav-item-3');
+
+navItem1.addEventListener('click', () => {
+  addNewBook.style.display = 'none';
+  contact.style.display = 'none';
+  list.style.display = 'block';
+});
+
+navItem2.addEventListener('click', () => {
+  list.style.display = 'none';
+  contact.style.display = 'none';
+  addNewBook.style.display = 'block';
+});
+
+navItem3.addEventListener('click', () => {
+  addNewBook.style.display = 'none';
+  list.style.display = 'none';
+  contact.style.display = 'flex';
+});
+
 let bookss = [];
-export default class BookClass {
+export class BookClass {
   constructor(title, author, id) {
     this.title = title;
     this.author = author;
@@ -11,7 +42,7 @@ export default class BookClass {
     <p>"${this.title}" by ${this.author}</p>
     <button type="button" data-id='${this.id}' class="remove">remove</button>
     </div>
-    </li>`;
+  </li>`;
   }
 
   static addBook(book) {
@@ -21,7 +52,6 @@ export default class BookClass {
     }
     book.id = id;
     bookss.push(book);
-    // console.log(bookss);
     localStorage.setItem('bookss', JSON.stringify(bookss));
   }
 
@@ -29,4 +59,21 @@ export default class BookClass {
     bookss = bookss.filter((b) => b.id !== Number(id));
     localStorage.setItem('bookss', JSON.stringify(bookss));
   }
+}
+
+const storedBooks = JSON.parse(localStorage.getItem('bookss'));
+
+export function showBooks() {
+  const booksCode = bookss.map((book) => new BookClass(book.title, book.author, book.id).bookCode());
+  bookList.innerHTML = booksCode.join('');
+
+  const btn = document.querySelectorAll('.remove');
+
+  btn.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const id = e.target.getAttribute('data-id');
+      BookClass.remove(id);
+      showBooks();
+    });
+  });
 }

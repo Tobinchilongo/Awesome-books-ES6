@@ -28,15 +28,16 @@ Additional description about the project and its features.
 
 **To get a copy of this repo into your local machine run the following command:**
 ```
-git clone (https://github.com/Tobinchilongo/Awesome-Books)
-cd my-first-capstone
+git clone (https://github.com/Tobinchilongo/Awesome-books-ES6)
+cd Awesome-books-ES6
 in visual studio code you can click the go live button to view it live in the browser.
 ```
 
 ## Author
 
 👤 **Tobin Chilongo Jnr**
-👤 **Tarikwa Tesfa**
+👤 **Selma Belhadj**
+👤 **Oybek Kayumov**
 
 
 - GitHub: [@Tobinchilongo](https://github.com/Tobinchilongo)

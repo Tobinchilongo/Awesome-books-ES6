@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/Tobinchilongo/Awesome-books-ES6/issues"
   },
-  "homepage": "https://github.com/Tobinchilongo/Awesome-books-ES6#readme"
+  "homepage": "https://github.com/Tobinchilongo/Awesome-books-ES6#readme",
+  "dependencies": {
+    "luxon": "^2.3.0"
+  }
 }
